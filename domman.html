@@ -12,10 +12,20 @@
             margin-bottom: 20px;
             background-color: teal;
         }
-        div {
+        #rainbow > div {
             height: 30px;
             width: 30px;
-            border-radius: 50%;
+        }
+        .addremovelcasses > div {
+            width: 500px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: skyblue;
+            padding: 12px;
+        }
+        .addremovelcasses > .cont.display {
+            background-color: teal;
         }
     </style>
 </head>
@@ -50,6 +60,7 @@
             dolores dignissimos pariatur quo? Inventore!
         </div>
     </div>
+    <button onclick="classAdderRemover()">class adder & remover</button>
     <script>
         function changeText(el){
             el.innerText = " You clicked me so hard!";
@@ -71,6 +82,10 @@
             for (let i = 0; i < rainbowMakers.length; i++) {
                 rainbowMakers[i].style.backgroundColor = rainbowMakers[i].className;
             }
+        }
+        function classAdderRemover () {
+            let loremHolder = document.querySelector ( '.cont');
+            loremHolder.classList.add ( 'display');
         }
     </script>
 </body>
