@@ -5,16 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom manipulation</title>
+    <style>
+        #rainbow {
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px;
+            background-color: teal;
+        }
+        div {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="test">
         <button onclick="changeText (this)">
             I am a button
         </button>
     </div>
+    <div>
+        <p>
+            Disappearing text!
+        </p>
+    </div>
+    <div id="rainbow">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+        <div class="violet"></div>
+        <div class="indigo"></div>
+        <div class="blue"></div>
+
+    </div>
+    <button onclick="rainbowMaker (this)">make rainbow</button>
     <script>
         function changeText(el){
-            el.innerText = " You clicked me so hard!"
+            el.innerText = " You clicked me so hard!";
+            let parentEl = el.parentElement;
+            let divBelow = parentEl.nextElementSibling;
+            let paragraph = divBelow.querySelector("p");
+            if (paragraph.style.display === 'none') {
+                paragraph.style.display = 'block';
+            }else {
+                paragraph.style.display = 'none';
+            }
+            console.log (paragraph.textContent);
+        }
+
+        function rainbowMaker (el) {
+            el.innerText = "Your rainbow was created";
+            let rainbowDiv = el.previousElementSibling;
+            let rainbowMakers = rainbowDiv.getElementsByTagName( 'div' );
+            for (let i = 0; i < rainbowMakers.length; i++) {
+                rainbowMakers[i].style.backgroundColor = rainbowMakers[i].className;
+            }
         }
     </script>
 </body>
