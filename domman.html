@@ -62,6 +62,7 @@
     </div>
     <button onclick="classAdder()">class adder</button>
     <button onclick="classRemover()">class remover</button>
+    <button onclick="toggleDisplayClass()">class toggler</button>
     <script>
         function changeText(el){
             el.innerText = " You clicked me so hard!";
@@ -91,6 +92,10 @@
         function classRemover () {
             let loremHolder = document.querySelector ( '.cont');
             loremHolder.classList.remove ( 'display');
+        }
+        function toggleDisplayClass () {
+            let loremHolder = document.querySelector ( '.cont');
+            loremHolder.classList.toggle ( 'display');
         }
     </script>
 </body>
