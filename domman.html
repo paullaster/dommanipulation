@@ -60,7 +60,8 @@
             dolores dignissimos pariatur quo? Inventore!
         </div>
     </div>
-    <button onclick="classAdderRemover()">class adder & remover</button>
+    <button onclick="classAdder()">class adder</button>
+    <button onclick="classRemover()">class remover</button>
     <script>
         function changeText(el){
             el.innerText = " You clicked me so hard!";
@@ -83,9 +84,13 @@
                 rainbowMakers[i].style.backgroundColor = rainbowMakers[i].className;
             }
         }
-        function classAdderRemover () {
+        function classAdder () {
             let loremHolder = document.querySelector ( '.cont');
             loremHolder.classList.add ( 'display');
+        }
+        function classRemover () {
+            let loremHolder = document.querySelector ( '.cont');
+            loremHolder.classList.remove ( 'display');
         }
     </script>
 </body>
