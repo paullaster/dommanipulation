@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends List</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+        }
+        th, td {
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="friends-table">
+    
+    </div>
+    <script>
+        (function tableBuilder () {
+            let friends = ['Winne', 'John', 'Stacy', 'Joseph', 'Wiscon', 'Benjamin', 'Njoroge', 'Njagi', 'Kuya', 'Eunice'
+                        , 'Vera', 'Cynthia'];
+            let tableSection = document.querySelector ('.friends-table');
+            const table = document.createElement ( 'table');
+            const tableCaption = document.createElement ( 'caption');
+            const tableHead = document.createElement ( 'thead');
+            const tableBody = document.createElement ( 'tbody');
+            const tableFooter = document.createElement ( 'tfooter');
+            const thColOne = document.createElement ( 'th');
+            const thColTwo = document.createElement ( 'th');
+            thColOne.textContent = '#SN';
+            thColTwo.textContent = 'Name';
+            tableCaption.textContent = 'Friends table'
+            for ( let i = 0; i < friends.length; i++) {
+                const tableRow = document.createElement ( 'tr');
+                const tDataOne = document.createElement ( 'td');
+                const tDataTwo = document.createElement ( 'td');
+                tDataOne.textContent = ` ${i + 1}`;
+                tDataTwo.textContent = ` ${friends[i]} `;
+                tableRow.appendChild(tDataOne);
+                tableRow.appendChild(tDataTwo);
+                tableBody.appendChild (tableRow);
+                console.log (tableRow)
+            };
+            tableHead.appendChild ( thColOne );
+            tableHead.appendChild ( thColTwo );
+            table.appendChild ( tableHead);
+            table.appendChild ( tableBody );
+            table.appendChild ( tableFooter );
+            table.appendChild(tableCaption);
+            tableSection.appendChild(table);
+        })();
+
+    </script>
+</body>
+</html>
