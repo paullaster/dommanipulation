@@ -12,9 +12,11 @@
         <script>
             let testerButtons = document.querySelectorAll ( 'button');
             for (let i = 0; i < testerButtons.length; i++) {
-                console.log (testerButtons[i] );
+                testerButtons[i].addEventListener ( 'click', output, this);
             };
-            console.log ( testerButtons.length);
+            function output (el) {
+                console.log (el.target.textContent);
+            };
         </script>
     </body>
 </html>
