@@ -1,15 +1,20 @@
 <!doctype html>
 <html>
-<head>
- <title>JS Tester</title>
-</head>
-<body>
- <div>
- <button>Button 1</button>
- <button>Button 2</button>
- <button>Button 3</button>
- </div>
- <script>
- </script>
-</body>
+    <head>
+        <title>JS Tester</title>
+    </head>
+    <body>
+        <div>
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div> 
+        <script>
+            let testerButtons = document.querySelectorAll ( 'button');
+            for (let i = 0; i < testerButtons.length; i++) {
+                console.log (testerButtons[i] );
+            };
+            console.log ( testerButtons.length);
+        </script>
+    </body>
 </html>
